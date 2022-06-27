@@ -18,19 +18,13 @@ public  class AutomovilDiesel extends Automovil {
         costoLit=n;
     }
      public void establerDescuento(double des){
-         descuento= des / 100;
-     }
-  
-      
-      public void calcularDescuento(){
-          descuento=(numLit*costoLit)*0.10;
-      }
-      
+         descuento= des;
+     }    
   
    @Override
     public void calcularValorCan() {
 
-        descuento = descuento * numLit;
+        descuento = (descuento/100) * numLit;
         numLit = numLit - descuento;
         valorCan = (costoLit * numLit);
     }
@@ -54,7 +48,7 @@ public  class AutomovilDiesel extends Automovil {
                                         + "%s\n"
                                         + "Numero de Litros:%.2f\n"
                                         + "Costo por Litro:%.2f\n"
-                                        + "Descuento: %.2f %\n"
+                                        + "Descuento: %.2f \n"
                                         + "Valor a Cancelar: %.2f\n", cadena,
                                         numLit, costoLit, descuento, valorCan);
                                     return cadena;
